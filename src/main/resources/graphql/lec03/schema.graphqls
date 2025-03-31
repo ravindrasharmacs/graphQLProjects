@@ -9,9 +9,15 @@ type Customer{
     age: Int
     city: String
     orders(limit: Int!): [CustomerOrder]!
+    choices(limit: Int!): [CustomerChoice]!
 }
 
 type CustomerOrder{
+    id: ID!
+    description: String
+}
+
+type CustomerChoice{
     id: ID!
     description: String
 }
