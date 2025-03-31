@@ -2,6 +2,7 @@ package com.vinsguru.graphqlplayground.lec02;
 
 import com.vinsguru.graphqlplayground.lec02.dto.AgeRangeFilter;
 import com.vinsguru.graphqlplayground.lec02.dto.Customer;
+import com.vinsguru.graphqlplayground.lec02.dto.SalaryRangeFilter;
 import com.vinsguru.graphqlplayground.lec02.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -36,4 +37,8 @@ public class CustomerController {
         return this.service.withinAge(filter);
     }
 
+    @QueryMapping
+    public Flux<Customer> customersBySaleRange(@Argument SalaryRangeFilter filter){
+        return this.service.withinSale(filter);
+    }
 }

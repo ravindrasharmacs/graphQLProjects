@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor(staticName = "create")
 public class Customer {
-
     private Integer id;
     private String name;
     private Integer age;
     private String city;
-
+    private Integer salary;
 }

@@ -12,6 +12,14 @@ type Query{
 
     # filter customers by age range
     customersByAgeRange(filter: AgeRangeFilter!): [Customer]!
+
+    # filter customers by sale range
+    customersBySaleRange(filter: SaleRangeFilter!): [Customer]!
+}
+
+input SaleRangeFilter {
+    minSalary : Int!
+    maxSalary: Int!
 }
 
 input AgeRangeFilter{
